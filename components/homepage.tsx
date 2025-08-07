@@ -21,7 +21,7 @@ export function HeroSection() {
       <div className="flex flex-col items-center justify-center w-full h-full gap-10">
             <FadeIn className="max-w-5xl pt-10 md:pt-[20vh] 2xl:pt-[15vh] ">
               <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl ">
-                Hi, I'm <br />
+                Hi, I&apos;m <br />
                 Oubeid Allah<span className="wave">👋</span>
               </h1>
               <div className="flex mt-3 mb-1">

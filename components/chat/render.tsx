@@ -6,11 +6,12 @@ import { Skills } from "../skills";
 import { Education } from "../education";
 import { Contact } from "../contact";
 import { Resume } from "../resume";
+
 interface ToolRendererProps {
   toolInvocations: Array<{
     toolCallId: string;
     toolName: string;
-    result?: any;
+    result?: unknown;
   }>;
   messageId: string;
 }

@@ -99,6 +99,13 @@ export function AnimatedTitle() {
     engineer,
     data,
     scientist,
+    machine,
+    deep,
+    learning,
+    llm,
+    cloud,
+    x1,
+    x2, 
   ]);
 
   return (
