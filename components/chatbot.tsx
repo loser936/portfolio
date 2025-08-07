@@ -83,8 +83,8 @@ export function Chatbot() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-full w-full mx-auto bg-background max-h-[810px] max-w-[1150px] min-h-full overflow-hidden">
-      <div className="flex-1 overflow-auto p-6 ">
+    <div className="flex flex-col h-screen max-h-[92vh] sm:h-full  w-full mx-auto bg-background max-w-[1150px] min-h-full overflow-hidden">
+      <div className="flex-1 overflow-y-auto sm:p-6 ">
         {messages.length === 0 && (
           <div className="flex flex-col justify-center items-center h-full">
             <Avatar className="w-8 h-8 border">
@@ -143,7 +143,7 @@ export function Chatbot() {
 
       <form
         onSubmit={handleUserSubmit}
-        className="px-4 py-3 sm:px-1 flex items-center gap-2 "
+        className="sm:px-4 py-3 sm:px-1 flex items-center gap-2 "
       >
         <div className="relative flex-1">
           <Textarea

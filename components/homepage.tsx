@@ -24,14 +24,22 @@ export function HeroSection() {
                 Hi, I&apos;m <br />
                 Oubeid Allah<span className="wave">👋</span>
               </h1>
-              <div className="flex mt-3 mb-1">
-                Looking for a job{' '}
-                <span className="relative flex h-2 w-2 self-center mx-1">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                </span>{' '}
-                / &#8205; <AnimatedTitle />
+              <div className="flex flex-col min-[800px]:flex-row mt-3 mb-1 text-base sm:text-lg items-start sm:items-center gap-1 sm:gap-2">
+                  <div className="flex items-center">
+                    Looking for a job{' '}
+                    <span className="relative flex h-2 w-2 self-center mx-1">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                    </span>{' '}
+                    /
+                  </div>
+
+                  {/* AnimatedTitle goes to next line on small screens */}
+                  <div>
+                    <AnimatedTitle />
+                  </div>
               </div>
+
               <div className="mt-4 rounded-md bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2 text-sm">
                 🚧 This website is still under construction. More updates coming soon!
               </div>
