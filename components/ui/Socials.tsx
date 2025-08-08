@@ -48,9 +48,9 @@ export function LeetCodeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const socialMediaProfiles = [
-  { title: 'Linkedin', href: 'https://www.linkedin.com/in/jalejandrogomeze/', icon: LinkedinIcon },
-  { title: 'GitHub', href: 'https://github.com/AlejandroGomezE', icon: GitHubIcon },
-  { title: 'LeetCode', href: 'https://leetcode.com/AlejandroGomezE/', icon: LeetCodeIcon },
+  { title: 'Linkedin', href: 'https://www.linkedin.com/in/oubeid-allah-jaballah/', icon: LinkedinIcon },
+  { title: 'GitHub', href: 'https://github.com/T81oub', icon: GitHubIcon },
+  { title: 'LeetCode', href: 'https://leetcode.com/u/Oubeidjaballah/', icon: LeetCodeIcon },
 ];
 
 export function Socials({ className }: { className?: string; invert?: boolean }) {

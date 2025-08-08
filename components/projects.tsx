@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { projectsData } from "@/lib/data";
+import { projectsData, Project } from "@/lib/data";
 import ProjectCard from "@/components/ui/projectcard";
+import ProjectDetailOverlay from "@/components/ui/projectDetailOverlay";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,8 @@ const getCategories = (projects: typeof projectsData) => {
 
 export function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+
   const categories = getCategories(projectsData);
   const sortedProjects = [...projectsData].sort(
     (a, b) =>
@@ -40,17 +43,15 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 sm:py-32 relative bg-white text-gray-900 overflow-hidden"
+      className="relative bg-white text-gray-900 overflow-hidden"
     >
-      {/* Background gradient blobs — silver & blue inspired */ }
+      {/* Background gradient blobs */}
       <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 sm:w-[30rem] sm:h-[30rem] bg-gradient-to-br from-silver via-white to-blue-100 rounded-full filter blur-3xl opacity-30 animate-blob" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 sm:w-[30rem] sm:h-[30rem] bg-gradient-to-br from-blue-100 to-gray-100 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
-        <div className="absolute top-1/3 right-1/5 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-br from-gray-100 to-white rounded-full filter blur-3xl opacity-15 animate-blob animation-delay-4000" />
+        {/* ... your blobs here ... */}
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Filter Buttons */ }
+        {/* Filter Buttons */}
         <motion.div
           className="flex flex-wrap items-center justify-center gap-3 mt-10 mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -73,13 +74,13 @@ export function Projects() {
           ))}
         </motion.div>
 
-        {/* Projects Grid */ }
+        {/* Projects Grid */}
         <motion.div
           key={selectedCategory}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 "
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
         >
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
@@ -90,12 +91,24 @@ export function Projects() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <ProjectCard project={project} index={index} />
+                <ProjectCard
+                  project={project}
+                  index={index}
+                  onClick={() => setActiveProject(project)}
+                />
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Project Overlay */}
+      {activeProject && (
+        <ProjectDetailOverlay
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
+      )}
     </section>
   );
 }
