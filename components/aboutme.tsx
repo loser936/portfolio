@@ -2,7 +2,6 @@
 
 import Image from "next/legacy/image";
 import { motion, circOut } from "framer-motion";
-import { GlassmorphicCard } from "./ui/GlassmorphicCard";
 import Link from "next/link";
 
 import { Images } from "@/lib/images";
@@ -34,7 +33,7 @@ export function AboutMe() {
 
           <Image
             src={profileImageUrl}
-            alt="Duong Hoang Lan Anh - Frontend Developer"
+            alt="Oubeid Allah JABALLAH - AI Engineer"
             layout="fill"
             objectFit="cover"
             className="transform transition-transform duration-500 group-hover:scale-105"

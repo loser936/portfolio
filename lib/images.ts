@@ -32,10 +32,11 @@ import FaceRecognitionExample from "../public/images/projects/face-recommendatio
 
 import ProjectPlaceholder from "../public/images/projects/project-placeholder.png";
 
+import ProfilePlaceholder from "../public/images/profile-pic.jpeg";
 
 // --- Export Object ---
 export const Images: { [ key: string ]: StaticImageData } = {
- 
+  ProfilePlaceholder,
   CellularAutomataScreenshot,
   ProjectPlaceholder,
   SmartAgroThumbnail,
